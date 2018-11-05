@@ -15,17 +15,31 @@ Plugin 'scrooloose/nerdtree.git'
 " by name as it appears on the site
 Plugin 'Buffergator'
 Plugin 'Rip-Rip/clang_complete'
+Plugin 'scrooloose/nerdcommenter'
 
 " Now we can turn our filetype functionality back on
 filetype plugin indent on
+
+" @abdul 
+" Now setting up a few of my own modifications
 let g:clang_library_path='/usr/lib/llvm-3.8/lib/libclang.so'
 set backspace=indent,eol,start
+" Setting line number
 set number
+" setting up indentation
 set autoindent
+" setting colorscheme because PuTTy default one is horrible
+colorscheme desert
 syntax on
+
+" Setting key binding for commenting 
 " To comment select all lines and press Ctrl+C
 map <C-c> :s/^/\/\//<Enter>
 " To uncomment press Ctrl+u
 map <C-u> :s/^\/\///<Enter>
 
-colorscheme desert
+" Setting key binding for auto addition of author information
+let g:vimrc_author='Abdul Wasay' 
+let g:vimrc_email='wasaya@acm.org'  
+let g:vimrc_homepage='https://knightturing.github.io/'
+nmap <F4> :AuthorInfoDetect<cr>
