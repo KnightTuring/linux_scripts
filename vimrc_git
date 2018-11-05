@@ -1,0 +1,31 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" This is the Vundle package, which can be found on GitHub.
+" For GitHub repos, you specify plugins using the
+" 'user/repository' format
+Plugin 'gmarik/vundle'
+
+" We could also add repositories with a ".git" extension
+Plugin 'scrooloose/nerdtree.git'
+
+" To get plugins from Vim Scripts, you can reference the plugin
+" by name as it appears on the site
+Plugin 'Buffergator'
+Plugin 'Rip-Rip/clang_complete'
+
+" Now we can turn our filetype functionality back on
+filetype plugin indent on
+let g:clang_library_path='/usr/lib/llvm-3.8/lib/libclang.so'
+set backspace=indent,eol,start
+set number
+set autoindent
+syntax on
+" To comment select all lines and press Ctrl+C
+map <C-c> :s/^/\/\//<Enter>
+" To uncomment press Ctrl+u
+map <C-u> :s/^\/\///<Enter>
+
+colorscheme desert
